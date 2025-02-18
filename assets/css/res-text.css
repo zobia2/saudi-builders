@@ -1,0 +1,52 @@
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 8vw !important;
+  }
+
+  h2 {
+    font-size: 6vw !important;
+  }
+
+  h3 {
+    font-size: 4vw !important;
+  }
+
+  p {
+    font-size: 2vw !important;
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 8vw !important;
+  }
+
+  h2 {
+    font-size: 6vw !important;
+  }
+
+  h3 {
+    font-size: 4vw !important;
+  }
+
+  p {
+    font-size: 2vw !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 10vw !important;
+  }
+
+  h2 {
+    font-size: 8vw !important;
+  }
+
+  h3 {
+    font-size: 6vw !important;
+  }
+
+  p {
+    font-size: 3.5vw !important;
+  }
+}
