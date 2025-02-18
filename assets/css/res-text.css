@@ -1,3 +1,20 @@
+@media (max-width: 1440px) {
+  h1 {
+    font-size: 6vw !important;
+  }
+
+  h2 {
+    font-size: 4vw !important;
+  }
+
+  h3 {
+    font-size: 2vw !important;
+  }
+
+  p {
+    font-size: 1vw !important;
+  }
+}
 @media (max-width: 1024px) {
   h1 {
     font-size: 8vw !important;
@@ -43,10 +60,10 @@
   }
 
   h3 {
-    font-size: 6vw !important;
+    font-size: 4vw !important;
   }
 
   p {
-    font-size: 3.5vw !important;
+    font-size: 2.8vw !important;
   }
 }
