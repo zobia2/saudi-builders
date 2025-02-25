@@ -1,3 +1,11 @@
+.animate__animated.animate__bounce {
+  --animate-duration: 2s;
+}
+
+:root {
+  --animate-duration: 800ms;
+  --animate-delay: 0.9s;
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +14,6 @@
   font-weight: 400;
   font-style: normal;
 }
-/* .container {
-  max-width: 55% !important;
-} */
 body {
   overflow-x: hidden !important;
 }
@@ -44,8 +49,15 @@ body {
 
 .nav-item .nav-link {
   font-size: 16px !important;
+  transition: color 0.5s ease-in-out;
+}
+.nav-item:hover .nav-link {
+  color: #ac9f61 !important;
+  text-decoration: underline;
 }
 .section2 {
+  padding-top: 100px;
+  padding-bottom: 225px;
   background-image: url("../images/section/2.jpg");
 }
 .section3 {
@@ -63,6 +75,84 @@ body {
   min-height: auto !important;
 }
 .card-1 {
+  position: relative;
+  width: 100%;
+  background-image: url(../images/card-1.png);
+  padding: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  color: white; /* Adjust as necessary for visibility */
+  z-index: 1; /* Ensure card content is above the overlay */
+  cursor: pointer;
+}
+
+.card-1 p {
+  position: relative; /* Ensure text is positioned above the overlay */
+  z-index: 1; /* Ensure text is above the overlay */
+}
+
+.card-1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(101deg, #235146 16.74%, #ac9f61 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  border-radius: inherit;
+  z-index: 0; /* Make sure the overlay is below the content */
+}
+
+.card-1:hover::after {
+  opacity: 1; /* Show overlay on hover */
+}
+
+/* .card-1 {
+  position: relative;
+  width: 100%;
+  background-image: url(../images/card-1.png);
+  padding: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+
+.card-1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(101deg, #235146 16.74%, #ac9f61 93.28%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  border-radius: inherit;
+}
+
+.card-1:hover::after {
+  opacity: 1;
+} */
+/* .card-1 {
+  width: 100%;
+  background-image: url(../images/card-1.png);
+  padding: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  transition: background-image 5s ease-in-out, background-color 5s ease-in-out;
+}
+
+.card-1:hover {
+  background-image: linear-gradient(101deg, #235146 16.74%, #ac9f61 93.28%);
+} */
+
+.card-1-icon {
+  height: 24px;
+  width: 24px;
+}
+
+/* .card-1 {
   width: 100%;
   background-color: #235146;
   padding: 1.5rem;
@@ -72,14 +162,39 @@ body {
 .card-1-icon {
   height: 24px;
   width: 24px;
-}
+} */
 .card-2 {
   width: 100%;
   background-color: #ffffff !important;
   color: #ac9f61 !important;
   padding: 0.5rem 0.8rem;
   border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
 }
+
+.card-2:hover {
+  background-color: #153e35 !important;
+}
+
+.card-2:hover p {
+  color: #fff !important;
+  transition: color 0.5s ease; /* Ensure smooth text color transition */
+}
+
+/* .card-2 {
+  width: 100%;
+  background-color: #ffffff !important;
+  color: #ac9f61 !important;
+  padding: 0.5rem 0.8rem;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.card-2:hover,
+.card-2:hover p {
+  color: #fff !important;
+  background-color: #153e35 !important;
+} */
 .card-2-icon {
   height: 32px;
   width: 32px;
@@ -98,9 +213,11 @@ body {
   border-radius: 25px;
 }
 @media (max-width: 1440px) {
-  /* .border-bottom-right {
-    border-right: 0px solid #000 !important;
-  } */
+  .header {
+    background-size: cover;
+    padding: 30px;
+    min-height: 60vh !important;
+  }
   .section2 {
     padding-top: 100px;
     padding-bottom: 225px;
@@ -113,7 +230,6 @@ body {
 @media (max-width: 1190px) {
   .border-bottom-right {
     border-right: 0px solid #000 !important;
-    /* border-bottom: 1px solid #000 !important; */
   }
 }
 @media (max-width: 1024px) {
@@ -196,18 +312,13 @@ body {
 }
 
 @media (max-width: 480px) {
-  .header {
-    background-size: contain;
-    padding: 30px;
-  }
-
   .section {
     min-height: 60vh !important;
   }
 
   .header {
     background-size: cover;
-    padding: 10px;
+    padding: 25px;
   }
 
   .nav-item .nav-link {
